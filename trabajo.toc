@@ -1,0 +1,17 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Introducción}{4}{}%
+\contentsline {section}{\numberline {2}Ecuaciones diferenciales para las que podemos obtener soluciones explicitas}{4}{}%
+\contentsline {subsection}{\numberline {2.1}Ecuaciones lineales}{4}{}%
+\contentsline {subsection}{\numberline {2.2}Ecuaciones de Bernoulli}{5}{}%
+\contentsline {subsection}{\numberline {2.3}Ecuaciones de Ricatti}{6}{}%
+\contentsline {subsection}{\numberline {2.4}Factor integrante}{8}{}%
+\contentsline {subsection}{\numberline {2.5}Transformaciones lineales}{9}{}%
+\contentsline {subsection}{\numberline {2.6}Ecuación de Clairaut}{10}{}%
+\contentsline {section}{\numberline {3}Problemas en matlab}{11}{}%
+\contentsline {subsection}{\numberline {3.1}Ecuaciones diferenciales lineales}{11}{}%
+\contentsline {subsection}{\numberline {3.2}Ecuaciones diferenciales de Bernoulli}{12}{}%
+\contentsline {subsection}{\numberline {3.3}Ecuaciones diferenciales de Ricatti}{13}{}%
+\contentsline {subsection}{\numberline {3.4}Factor integrante}{14}{}%
+\contentsline {subsection}{\numberline {3.5}Transformaciones lineales}{14}{}%
+\contentsline {subsection}{\numberline {3.6}Ecuaciones diferenciales de Clairaut}{15}{}%
+\contentsline {section}{\numberline {4}Bibliografía}{15}{}%

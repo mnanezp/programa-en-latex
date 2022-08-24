@@ -1,0 +1,761 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage[left=2.00cm, right=2.00cm, top=2.00cm, bottom=2.00cm]{geometry}
+\usepackage{tabularx}
+\usepackage{apacite}
+\author{Marlon Ñañez}
+\begin{document}
+
+%caratula
+
+  \begin{center}
+\,\\
+  \vspace{33cm}
+    {\Large\textbf{ECUACIONES DIFERENCIALES PARA LAS QUE SE PUEDE OBTENER SOLUCIONES EXPLICITAS}}\\
+   \vspace{8cm}
+   {\Large\textbf{AUTOR}}\\
+   \vspace{0.8cm}
+ {\Large\textbf{MARLON ANDRES ÑAÑEZ POPAYAN}}\\
+   \vspace{0.8cm}
+   {\Large\textbf{INSTRUCTOR}}\\
+   \vspace{0.8cm}
+ {\Large\textbf{JHONATAN COLLAZOS RAMIREZ}}\\
+   \vspace{7cm}
+   {\Large\textbf{UNIVERSIDAD DEL CAUCA - SEDE NORTE}}\\
+   \vspace{0.8cm}
+ {\Large\textbf{FACULTAD DE INGENIERIA CIVIL}}\\
+   \vspace{0.8cm}
+   {\Large\textbf{CARRERA DE INGENIERIA CIVIL}}\\
+   \vspace{0.8cm}
+ {\Large\textbf{Santander de Quilichao}}\\
+   \vspace{0.8cm}
+   {\Large\textbf{29 de agosto de 2022}}\\
+
+  \end{center}
+%caratula
+\tableofcontents
+\vspace{23cm}
+
+\section{Introducción}
+Los temas a tratar en este trabajo están relacionados con las \textbf{ecuaciones diferenciales para las que podemos obtener soluciones explicitas}, entre las cuales están las Ecuaciones lineales,de Bernoulli, de Riccati,de Clairaut,factor integrante y transformaciones lineales. La finalidad de esta obra es aprender nuevos conocimientos y fortalecer algunos ya previamente estudiados,la estructura del trabajo va dividida por secciones en donde se toca cada uno de los temas , con sus respectivos ejercicios, demostrando así la ardua investigación que se realizo.
+
+\section{Ecuaciones diferenciales para las que podemos obtener soluciones explicitas} 
+Como dice claramente en el titulo nos enfocaremos en aquellas ecuaciones donde nos den como resultado una solución explicita,es decir, en la cual la variable dependiente se expresa sólo en términos de la variable independiente y las constantes.
+  
+  \subsection{Ecuaciones lineales}
+  
+  En esta sección nos enfocaremos en aquellas ecuaciones diferenciales lineales que tienen soluciones explicitas, estas son de primer orden y su forma es la siguiente:\\
+  \begin{center}
+  $\dfrac{dy}{dx}+P(x)=Q(x)$
+  \end{center}
+  Ahora vamos a sacar la solución general a partir de la formula 
+ \begin{itemize}
+ \item Se debe conocer un teorema llamado \textbf{Criterio de exactitud}, que nos dice: Sean M y N funciones en las variables $x$ y $y$, con derivadas parciales continuas en una región R del plano.$M(x,y)dx+N(x,y)dy=0$ es una ecuación diferencial si y solo si $M_y(x,y)=N_x(x,y)$.
+  \item tomamos nuestra edl y la organizamos de una manera similar a nuestro anterior teorema de la siguiente forma.
+ \begin{center}
+ $\dfrac{dy}{dx}+P(x)=Q(x)$\\
+ \,\\
+ $-dy=(P(x)y-Q(x))dx$\\
+  \,\\
+ $P(x)y-Q(x))dx+1=0$\\
+  \end{center}
+  
+  \item sabemos que $M_y=P(x)$ y $N_x=0$ $\Leftrightarrow$\,$M_y$\,$\neq$\,$N_x$,\,por lo tanto no es una es una ecuación diferencial exacta, pero ya que cumple con el primer factor integrante\\
+  \begin{center}
+  $\dfrac{M_y-N_x}{N}=\dfrac{P(x)}{1}=P(x)$
+ \end{center}
+Por tanto usaremos en nuestra ecuación original el factor integrante
+    \begin{center}
+  $\mu(x)=e^{\int P(x)dx}$
+ \end{center}
+ \item Se agrega el factor integrante a cada lado de la igualdad. Ademas se da paso a la solución y al despeje de $y$ y de ese modo se obtendrá el modelo para encontrar la solución explicita de cualquier edl.El desarrollo se vera a continuación.\\
+ \begin{center}
+ $e^{\int P(x)dx}\lfloor\dfrac{dy}{dx}+P(x)y\rfloor= e^{\int P(x)dx}Q(x)$ e.d.exacta\\
+ \,\\
+ $(e^{\int P(x)dx})\dfrac{dy}{dx}+yP(x)e^{\int P(x)dx}=e^{\int P(x)dx}Q(x)$\\
+ \,\\
+ $\dfrac{d}{dx}(ye^{\int P(x)dx})=e^{\int P(x)dx}Q(x)$\\
+ 
+ \vspace{1cm}
+ 
+ \end{center}
+ 
+ \item Integrando a ambos lados nos queda de la siguiente forma:\\
+ \,\\
+ \begin{center}
+ $\int d(ye^{\int P(x)dx})=\int [e^{\int P(x)dx}Q(x)]dx+C$\\
+ \,\\
+ $ye^{\int P(x)dx}=\int [e^{\int P(x)dx}Q(x)]dx+C$\\
+ \,\\
+ \end{center}
+ \item Quedando la siguiente formula:\\
+ \,\\
+ \begin{center}
+ $y=e^{-\int P(x)dx}[\int e^{\int P(x)dx}Q(x)+C]$
+ \end{center}
+\end{itemize}
+
+Entonces para resolver una ecuación diferencial se deben seguir los siguientes pasos:\\
+\begin{enumerate}
+\item Debemos llevar la ecuación diferencial a la forma inicial
+\item Por último obtenemos la solución general con la ultima formula
+\end{enumerate}
+
+A continuación se presentara un ejemplo para complementar con la teoría:\\
+Hallemos la solución general para $\dfrac{dy}{dx}+(tanx)y=cos^2x$\\
+
+sabemos que $P(x)=tanx$ y $Q(x)=cos^2x$\\
+entonces:\\
+\begin{center}
+$y=e^{-\int tanxdx}[\int e^{\int tanxdx}cos^2x+C]$$=e^{ln(cosx)}(\int e^{-ln(cosx)}cos^2xdx+C)$\\
+\,\\
+$y=cosx(\int e^{ln(cosx)^-1}cos^2xdx+C)$$=cosx(\int\dfrac{1}{cosx}cos^2xdx+C)$\\
+\,\\
+$y=cosx(\int{cosxdx}+C)$$=cosx(senx+c)$
+
+\end{center}
+  
+  \subsection{Ecuaciones de Bernoulli}
+  
+  Una ecuación diferencial de Bernoulli es aquella que tiene la forma\\
+\begin{center}
+$\dfrac{dy}{dx}+P(x)=Q(x)y^n$
+\end{center}
+Si tenemos dicha ecuación podemos notar dos cosas
+\begin{itemize}
+\item si $n=1$ o $n=0$ se puede obtener una ecuación diferencial lineal\\
+\item si $n\neq1$ y $n\neq0$ nos tocaría aplicar un método de solución que consiste en un cambio de variable, que se mostrara a continuación.\\
+\begin{center}
+ $z=y^1-n\Rightarrow\dfrac{dz}{dx}=(1-n)y^{-n}\dfrac{dy}{dx}$\\
+  
+\end{center}
+Dicho cambio de variable nos transforma una edb a una edl en las variablez $z$ y $x$\\
+
+\end{itemize}
+A continuación se presentara un ejemplo para complementar con la teoría:\\
+Encontremos la solución general de la siguiente edb
+
+\begin{equation}\tag{1}
+x\dfrac{dy}{dx}+1=x^2y^2\\
+\end{equation}
+
+De (1) tenemos que
+\begin{equation}\tag{2}
+x\dfrac{dy}{dx}+x^{-1}y=xy^2\\
+\end{equation}
+
+Sean
+\begin{equation}\tag{3}
+z=y^{1-2}=y^{-1}\\
+\end{equation}
+
+\begin{equation}\tag{4}
+\dfrac{dz}{dx}=-y^{-2}\dfrac{dy}{dx}\\
+\end{equation}
+
+Multiplicando la ecuación (2) por $-y^{-2}$ obtenemos
+\begin{equation}\tag{5}
+-y^{-2}\dfrac{dz}{dx}-x^{-1}y^{-1}=-x\\
+\end{equation}
+
+Sustituimos (3) y (4) en (5) 
+\begin{equation}\tag{6}
+\dfrac{dz}{dx}-\dfrac{1}{x}z=-x
+\end{equation}
+donde\,P(x)=$-\dfrac{1}{x}$ \, y \, $Q(x)=-x$\\
+
+La solución general de (6) es:
+\begin{equation}\tag{7}
+z= e^{\int{\dfrac{dx}{x}}} (-\int e^{\int{\dfrac{-dx}{x}}}xdx+C)=x(-\int{dx+C})
+z=x(-x+C)=Cx-x^2\\
+\end{equation}
+
+por último sustituyendo (3) en (7) obtenemos la solución general de la ecuación (1)
+\begin{center}
+$y^{-1}=Cx-x^{2}\Leftrightarrow y=\dfrac{1}{Cx-x^{2}}$
+
+\end{center}
+  
+  \subsection{Ecuaciones de Ricatti}
+  
+  Una ecuación diferencial de Ricatti es aquella que est dada de la siguiente forma\\
+$$\dfrac{dy}{dx}=P(x)+Q(x)y+R(x)y^2$$\\
+Podemos encontrar una solución general para la e.d.R siempre y cuando conozcamos una solución particular de dicha ecuación, a continuación se mostrara un modelo de como debería estar.\\
+
+sea 
+{\begin{align*}
+    \dfrac{dy}{dx}=P(x)+Q(x)y+R(x)y^2\\
+    Y_p:\ \textbf{solución particular de la edR} 
+\end{align*}
+
+Por otro lado , un método para resolver dichas ecuaciones es:
+\,\\
+Paso 1, Realizar el cambio de variable que se indica\\
+{\begin{equation}\tag{1}
+y=y_p+\dfrac{1}{v}\\
+\end{equation}
+{\begin{equation}\tag{2}
+\dfrac{dy}{dx}=\dfrac{dy_p}{dx}-\dfrac{1}{v^2}\dfrac{dv}{dx}
+\end{equation}
+Paso 2, Se debe sustituir (1) en dos en la edR, Nota: la ecuación diferencia resultante es una edl\\
+Paso 3, Resorver la edl obtenida en el paso 1\\
+Paso 4, Expresar la solución general como $y=y_p+\dfrac{1}{v}$, donde v(x) es la solución general obtenida de un cambio de variable.\\
+
+COSA IMPORTANTE POR ANALIZAR\\
+Si $y_p$ es solución particular de una edR, se puede aplicar la siguiente sustitución en (1):
+
+\begin{equation}\tag{3}
+y=y_p+\dfrac{1}{v} 
+\end{equation}
+
+Gracias a esto se obtiene una edl de la forma:
+\begin{equation}\tag{4}
+\dfrac{dv}{dx}+(Q(x)+2R(x)y_p)v=-R(x)
+\end{equation}
+
+Derivemos en la ecuación\,(3)
+\begin{equation}\tag{5}
+\dfrac{dv}{dx}=\dfrac{dy_p}{dx}-\dfrac{1}{v^2}\dfrac{dv}{dx}
+\end{equation}
+
+Sustituyamos (3) y (5) en (1)
+\begin{equation}\tag{6}
+\dfrac{dy_p}{dx}-\dfrac{1}{v^2}\dfrac{dv}{dx}=P(x)+Q(x)(y_p+\dfrac{1}{v})+R(x)(y_p+\dfrac{1}{v})^2
+\end{equation}
+
+Como $y_p$ es solución de (1), entonces
+ \begin{equation}\tag{7}
+\dfrac{dy_p}{dx}=P(x)+Q(x)y_p+R(x)(y_p)^2
+\end{equation}
+
+Reemplazando  (7) en (6) obtenemos lo siguiente:
+ \begin{equation*}
+P(x)+Q(x)y_p+R(x)(y_p)^{2}-\dfrac{1}{v^2}\dfrac{dv}{dx}=P(x)+Q(x)(y_P+\dfrac{1}{v})+R(x)(y_p+\dfrac{1}{v})^2
+\end{equation*}
+
+De la ultima igualdad se tiene que:
+\begin{equation}\tag{8}
+-\dfrac{1}{v^2}\dfrac{dv}{dx}=Q(x)\dfrac{1}{v}+2R(x)\dfrac{y_p}{v}+R(x)\dfrac{1}{v^2}
+\end{equation}
+
+De (8)
+\begin{equation}\tag{9}
+-\dfrac{dv}{dx}=Q(x)v+2R(x)y_pv+R(x)=^[Q(x)+2R(x)y_p]v+R(x)
+\end{equation}
+\begin{equation*}
+\dfrac{dv}{dx}+[Q(x)+2R(x)y_p]v=-R(x)
+\end{equation*}
+Con esto comprobamos que (9) es una edl en la variable dependiente v y la variable independiente x\\
+\,
+Ahora hagamos un ejercicio.Encontremos la solución de la siguiente edR, sabiendo que $y_p=3$ es una solución particular.
+\begin{equation}\tag{1}
+\dot{y}= y^2+2y-15
+\end{equation}
+
+Paso 1:
+{\begin{equation}\tag{2}
+ y=3+\dfrac{1}{v}
+\end{equation}
+  {\begin{equation} \tag{3} 
+    \dfrac{dy}{dx}=-\dfrac{1}{v^2}\dfrac{dv}{dx} 
+\end{equation}
+
+Paso 2: Sustituyamos (2) y (3) en (1)
+
+ {\begin{equation} \tag{4} 
+    -\dfrac{1}{v^2}\dfrac{dv}{dx}=(3+\dfrac{1}{v})^2+2(3+\dfrac{1}{v})-15
+\end{equation}
+De (4)tenemos que:
+
+ {\begin{equation} \tag{5} 
+    -\dfrac{1}{v^2}\dfrac{dv}{dx}=\dfrac{8}{v}+\dfrac{1}{v^2}
+ \end{equation}
+  {\begin{equation*}
+    \dfrac{dv}{dx}+8v=-1
+\end{equation*}
+
+Paso 3:Resolver la edl que se obtuvo en (5)
+
+  {\begin{equation*}
+    v=e^{-\int8dx}[\int e^{\int 8dx}(-1)dx+C]=e^{-8x}(-\int e^{8x}dx+C)
+\end{equation*}
+
+ {\begin{equation} \tag{6} 
+    e^{-8x}(-\dfrac{1}{8}e^{8x}+C)=-\dfrac{1}{8}+Ce^{-8x}
+ \end{equation}
+ 
+Paso 4:Sustituyamos (6) en (2) 
+  {\begin{equation*}
+    y=3+\dfrac{1}{-\dfrac{1}{8}+Ce^{-8x}}=3+\dfrac{8e^{8x}}{-e^8x+8C}
+\end{equation*}
+
+Entonces la solución general de la edR es:
+ {\begin{equation*}
+    y=\dfrac{24C+5e^8x}{8C-e^8x}
+\end{equation*}
+  
+  \subsection{Factor integrante}
+  
+Podemos decir que $\mu(x,y)$  es un \textbf{factor integrante} para $M(x,y)dx+N(x,y)dy=0$ siempre que $\mu(x,y)M(x,y)dx+\mu(x,y)N(x,y)dy=0$ sea una ecuación e.d.exacta\\
+\,\\
+Cosa a tener en cuenta:
+Si en una ecuación diferencial se obtiene un factor integrante, para encontrar su solución se procede así:\\
+\,\\
+\begin{itemize}
+
+\item Parte 1, multiplicar a la ecuación por el factor integrante\\
+\item Parte 2,Se resuelve la ede obtenida en el paso 1, y luego se aplica el método para resolver la ecuación diferencial exacta\\
+\end{itemize}
+\textbf{Nota:} Dado que $M(x,y)+N(x,y)dy=0$ donde $M_Y\neq N_x$, A continuación se mostrara la condición para aplicar el facor integrante.
+
+\begin{table}[h]
+\centering
+   \begin{tabular}{|m{8cm}|m{4cm}|}
+   \hline
+     Condición sobre la ecuación diferencial & Factor integrante\\
+     \hline\hspace{1cm}\vspace{0.2cm}
+     $.^{.^{.^{.^{.^{.^{.}}}}}}$a)\,$\frac{M_y-N}{N}=f(x)$ & $\mu(x)=e^{\int f(x)dx}$\vspace{0.2cm}
+     \,\\
+     \hline\hspace{1cm}\vspace{0.2cm}
+     $.^{.^{.^{.^{.^{.^{.}}}}}}$b)\,$\frac{N_x-M_y}{M}=g(y)$ & $\mu(y)=e^{\int g(y)dy}$\vspace{0.2cm}
+     \,\\
+     \hline\hspace{1cm}\vspace{0.2cm}
+     $.^{.^{.^{.^{.^{.^{.}}}}}}$c)\,$\frac{M_y-N_x}{N-M}=h(z),z=x+y$ & $\mu(x,y)=e^{\int h(z)dz}$\vspace{0.2cm}
+     \,\\
+     \hline\hspace{1cm}\vspace{0.2cm}
+     $.^{.^{.^{.^{.^{.^{.}}}}}}$d)\,$\frac{M_y-N_x}{N+M}=h(z),z=x-y$ & $\mu(x,y)=e^{\int h(z)dz}$\vspace{0.2cm}
+     \,\\
+     \hline\hspace{1cm}\vspace{0.2cm}
+     $.^{.^{.^{.^{.^{.^{.}}}}}}$e)\,$\frac{M_y-N_x}{yN-xM}=h(z),z=xy$ & $\mu(x,y)=e^{\int h(z)dz}$\vspace{0.2cm}\\
+     \hline\hspace{1cm}\vspace{0.2cm}
+     $.^{.^{.^{.^{.^{.^{.}}}}}}$f)\,$\frac{M_y-N_x}{xN-yM}=h(z),z=x^2+y^2$ & $\mu(x,y)=e^{\dfrac{1}{2}\int h(z)dz}$\vspace{0.2cm}
+     \,\\
+     \hline\hspace{1cm}\vspace{0.2cm}
+     $.^{.^{.^{.^{.^{.^{.}}}}}}$g)\,$\frac{nN}{x}-\dfrac{mM}{y}=M_y-N_x$ & $\mu(x,y)=x^{n}y^m$\vspace{0.2cm}
+     \,\\
+     \hline
+
+   \end{tabular}
+\end{table}
+
+\,\\
+Ahora miremos un ejemplo en el cual encontraremos una solución explicita; para llegar a dicha solución  tomaremos  una edl y la desarrollaremos aplicando el factor integrante.\\
+\,\\
+Esta es nuestra ecuación
+\begin{equation}\tag{1}
+dy+(3x^{2}y-x^2)dx=0
+\end{equation}
+Queremos ver a (1) de la siguiente forma $\dfrac{dy}{dx}+P(x)y=Q(x)$\,edl\, \, quedando de la siguiente forma:
+\begin{equation}\tag{2}
+\dfrac{dy}{dx}+3x^{2}y=x^2
+\end{equation}
+Sabemos que nuestra ecuación cumple la condición (a) de nuestra tabla, lo sabemos gracias al mismo procedimiento que se nos mostro en la sección de edl.por lo tanto usaremos F.I$=e^{\int f(x)dx}$
+
+\begin{equation}\tag{3}
+=e^{3\int x^{2}dx}=e^{x^3}
+\end{equation}
+
+Multiplicamos (3) en (2)
+
+\begin{equation}\tag{4}
+e^{x^3}\dfrac{dy}{dx}+3x^{2}e^{x^{3}}y=e^{x^{3}}x^{2}
+\end{equation}
+
+aplicamos la derivada de un producto a (4)
+\begin{equation}\tag{5}
+d[e^{x^{3}}y]=e^{x^{3}}x^{2}
+\end{equation}
+Sacamos integral a la ecuación (5) en ambos lados de la igualdad
+\begin{equation}\tag{6}
+e^{x^{3}}y=\dfrac{1}{3}e^{x^{3}}+C
+\end{equation}
+Por último despejamos nuestra y de (5)
+\begin{equation*}
+y=\dfrac{1}{3}+\dfrac{C}{e^{x^{3}}}
+\end{equation*}  
+  
+  \subsection{Transformaciones lineales}
+  
+  Vamos a ver una aplicación del álgebra de transformaciones lineales para resolver una ecuación diferencial\\\,\\
+ Primero se resolverá una ed por un método llamado separacion de variables y después se aplicara el álgebra lineal para resolver una ecuación más compleja\\\,\\
+ Entonces si tenemos: 
+ \begin{itemize}
+ \item  
+ \begin{equation}\tag{Ecuación diferencial lineal ordinaria homogenea de coeficientes constantes}
+\dot{y}-\alpha y=0\Rightarrow 
+\end{equation}\\Es lineal porque  si la multiplicamos por un escalar obtenemos otra ecuación diferencial de la misma naturaleza , y si la volvemos a sumar nos volverá a dar otra e.l\\
+
+la expresaremos como notación de Smith\\
+$$\dfrac{dy}{dx}-\alpha y=0$$
+\\
+Aplicamos separación de variables e integramos
+$$\dfrac{dy}{y}=\alpha dx \Rightarrow \int \dfrac{dy}{y} =\int \alpha dx \Rightarrow Lny+C_1=\alpha x+C_2\Rightarrow y= Ce^{\alpha x}$$\\
+Sabemos que$ (\alpha ) $en ambas ecuaciones deben ser los mismos por lo que podemos plantearlos como polinomios\\
+\begin{equation}\tag{1}
+\dot{y}-\alpha y=0
+\end{equation}
+\begin{equation}\tag{2}
+y= Ce^{\alpha x}
+\end{equation}
+\\
+Sabemos que la derivada es un operador lineal, es una transformación por eso recordaremos lo siguiente\\
+
+\begin{equation}\tag{La imagen de "y" bajo la derivada es igual a "y" prima}
+D(y)=\dot{y}
+\end{equation}
+
+\begin{equation}\tag{La imagen de "y" bajo trasformación identidad es la misma funcion "y" }
+I(y)=y
+\end{equation}
+
+\begin{equation}\tag{La trasformacion nula al trasformar a "y" me devuelva a cero}
+O(y)=0
+\end{equation}\\
+Por lo que nuestra ecuación (1) queda:
+\begin{equation}\tag{3}
+D(y)-\alpha I(y)=O(y)
+\end{equation}\\
+Recordemos que:\,La imagen de "T" bajo " u " es equivalente a multiplicar la matriz asociada por el vector.Como se muestra a continuación.
+
+\begin{equation*}
+T(\bar{u})\Rightarrow A{\bar{u}}
+\end{equation*}\\
+
+Ahora se escribirá  (3) de la anterior forma quedando:
+\begin{equation}\tag{Entonces $D-\alpha I=0$ (4) }
+Dy-\alpha Iy=Oy\Rightarrow (D-\alpha I)y=Oy
+\end{equation}\\
+Gracias al teorema de Kaley Hamilton que nos dice " Toda matriz es raíz de su polinomio característico,es decir podemos pasar de un polinomio matricial a uno escalar, entonces (4) lo puedo expresar como:
+\begin{equation*}
+\lambda - \alpha =0\Rightarrow \lambda =\alpha
+\end{equation*}\\
+\item Con los conceptos vistos anteriormente podemos resolver esta ecuación diferencial $ \ddot{y}-3\dot{y}+2y=0$\\
+
+Primero la pasamos a su representación de transformación lineal
+\begin{equation*}
+D(D(y))-3D(y)+2I(y)=0(y)
+\end{equation*}\\
+Por notación de la matriz asociada nos queda
+\begin{equation*}
+D^{2}y-3Dy+2Iy=0y\Rightarrow (D^{2}-3D+2I)y=0y
+\end{equation*}\\
+En términos de polinomio matricial ,Además sustituyendo la identidad por uno y el operador derivada por landa nos queda de la siguiente forma :
+\begin{equation*}
+D^{2}-3D+2I=0\\
+\end{equation*}
+\begin{equation}\tag{$\lambda _1=1\,$ y $\lambda _2=2$}
+\lambda ^{2}-3\lambda +2 =0
+\end{equation}\\
+
+Entonces la ecuación $ \ddot{y}-3\dot{y}+2y=0$ la satisfacen:
+\begin{equation*}
+y=K_1e^{x}
+\end{equation*}
+
+\begin{equation*}
+y=K_2e^{2x}
+\end{equation*}
+ \end{itemize}
+  
+  \subsection{Ecuación de Clairaut}
+  
+  La \textbf{ecuación diferencial de Clairaut}llamada así en honor a su creador (Alexis-Claude), es aquella que tiene la forma:
+\begin{equation}\tag{1}
+y(x)=x\dfrac{dy}{dx}+f(\dfrac{dy}{dx})
+\end{equation}
+
+Esta tiene dos distintas soluciones la general y la singular ahora miremos como llegar
+a ellas:\\\,\\
+
+\begin{itemize}
+
+\item Para resolver la ecuación, diferenciamos respeto a x, quedando:\\\,\\
+$$\dfrac{dy}{dx}=\dfrac{dy}{dx}+x\dfrac{d^{2}y}{dx^2}+f'(\dfrac{dy}{dx})\dfrac{d^{2}y}{dx^{2}{'}}$$\\
+
+
+\item por tanto
+$$0=(x+f'(\dfrac{dy}{dx}))\dfrac{d^{2}y}{dx^{2}}\Leftrightarrow 0=\dfrac{d^{2}y}{dx^{2}}\, \textup{ó}\, 0=x+f'(\dfrac{dy}{dx}) $$\\
+
+\item para nuestro primer caso, $C=dy/dx$ para cualquier contante C. Si sustituimos esta a la ecuación de Clairaut, nos da la ecuación que nos dará las soluciones generales de Clairaut.
+$$y(x)=Cx+f(C),$$
+
+\end{itemize}
+
+En otro caso
+$$0=x+f'(\dfrac{dy}{dx}),$$\\
+
+La cual define solo una solución y(x), llamada solución singular\\
+
+Ahora miremos un ejemplo: solucionemos la ecuación
+$y=x\dfrac{dy}{dx}+1-Ln \dfrac{dy}{dx}$\\
+ \begin{itemize}
+ \item Paso 1:llevar la ecuación a la forma estándar, que para este caso ya esta en dicha forma\\
+ \item Paso 2:Hacer cambio de variable $\dfrac{dy}{dx}=P$ y desarrollamos\\
+ 
+ \begin{equation}\tag{2}
+y=xp+1-Ln P
+\end{equation}
+ \item Paso 3:Derivamos con respecto a x\\
+ $$\dfrac{dy}{dx}=P+x\dfrac{dp}{dx}-\dfrac{1}{p}\dfrac{dp}{dx}$$
+ $$P=P+x\dfrac{dp}{dx}-\dfrac{1}{p}\dfrac{dp}{dx}$$
+ $$0=x\dfrac{dp}{dx}-\dfrac{1}{p}\dfrac{dp}{dx}$$
+ $$0=\dfrac{dp}{dx}(x-\dfrac{1}{p})$$\\
+ Para que se cumpla la igualdad hay dos posibilidades
+ $\int \dfrac{dp}{dx}=0 \Leftrightarrow P=C$  ó $  x-\dfrac{1}{p}\Leftrightarrow p=\dfrac{1}{x}$\\\, \\
+ Por ultimo reemplazamos P en (2) obteniendo así nuestra solución general y singular
+ 
+  \begin{equation}\tag{solución general}
+y=xC+1-Ln C
+\end{equation}
+
+ \begin{equation}\tag{solución particular}
+y=x\dfrac{1}{x}+1-Ln \dfrac{1}{x}\Leftrightarrow y=2-Ln \dfrac{1}{x}
+\end{equation}
+ 
+ 
+ \end{itemize}
+  
+\section{Problemas en matlab}
+
+Por último vamos a ver las ecuaciones que meteremos a matlab, que serán de cada tema , excepto los que no se pueden ingresar al programa:\\\,\\
+\subsection{Ecuaciones diferenciales lineales}
+Encontrar  la solución de la siguiente ecuación $\dfrac{dy}{dx}-3y=12$
+\begin{itemize}
+\item Paso 1:Forma estándar
+\begin{equation}\tag{donde $P(x)=-3$ y $Q(x)=12$ }
+\dfrac{dy}{dx}+(-3)y=12
+\end{equation}
+\,\\
+\item Paso 2:Resolver factor integrante $e ^{\int P(x)dx}$
+\begin{equation*}
+e ^{\int -3dx}=e^{-3x}
+\end{equation*}
+\,\\
+\item Paso 3:Establecer la forma: $\dfrac{d}{dx}[e ^{\int P(x)dx}y=e ^{\int P(x)dx}Q(x)]$
+
+\begin{equation*}
+\dfrac{d}{dx}[e ^{-3x}y]=e ^{-3x}12 \Rightarrow \dfrac{d}{dx}e ^{-3x}y=12e^{-3x}
+\end{equation*}
+\,\\
+\item Paso 4:integrar a cada lado
+\begin{equation*}
+e ^{-3x}y=\int 12e ^{-3x}dx\Rightarrow e ^{-3x}y=-4e^{-3x}+C
+\end{equation*}
+\,\\
+\item Paso 5:Despejar $y$
+\begin{equation*}
+y=\dfrac{-4e ^{-3x}+C}{e ^{-3x}}\Rightarrow y=-4+Ce ^{3x}\Rightarrow y=Ce ^{3x}-4
+\end{equation*}
+\,\\
+\end{itemize}
+\,\\
+\subsection{Ecuaciones diferenciales de Bernoulli}
+Encontrar  la solución de la siguiente ecuación $x\dfrac{dy}{dx}+y=x ^{2}y ^2$
+\begin{itemize}
+\item Paso 1:Realizar la sustitución $y=u ^{-1} \Leftrightarrow \dfrac{dy}{dx}=-u ^{-2}\dfrac{du}{dx}$
+
+\begin{equation*}
+-xu ^{-2}\dfrac{du}{dx}+u ^{-1}=x ^{2}u ^{-2}
+\end{equation*}
+\,\\
+
+\item Paso 2:la transformamos a una edl dividiendo nuestra ecuación entre $-xu ^{-2}$
+
+\begin{equation}\tag{ecuación diferencial lineal}
+\dfrac{du}{dx}-\dfrac{1}{x}u=-x
+\end{equation}
+\,\\ Paso 3:Resolver factor integrante $e ^{\int P(x)dx}$considerando el signo menos de $P(x)$
+\begin{equation*}
+e ^{-\int{\dfrac{1}{x}}dx}=e^{Ln(-x)}=\dfrac{1}{x}
+\end{equation*}
+\,\\
+\item Paso 4: Aplicamos nuestro factor integrante a toda la ecuación quedando 
+\begin{equation*}
+\dfrac{1}{x}\dfrac{du}{dx}-\dfrac{1}{x ^2}u=-1
+\end{equation*}
+\,\\
+
+\item Paso 5:Por producto de derivadas nos queda y sacamos integral a ambos lados
+\begin{equation*}
+\dfrac{d}{dx}[\dfrac{1}{x}u]=-1\Rightarrow \dfrac{1}{x}u=-x+c 
+\end{equation*}
+\,\\
+
+\item Paso 6:se reemplaza $u=\dfrac{1}{y}$, por ultimo se despeja $y$
+\begin{equation*}
+\dfrac{1}{xy} =-x+C\Rightarrow 1= (-x+C)xy \Rightarrow \dfrac{1}{-x+C}=xy\Rightarrow y=\dfrac{1}{-x ^{2}+Cx}
+\end{equation*}
+
+\end{itemize}
+\,\\
+\subsection{Ecuaciones diferenciales de Ricatti}
+Encontrar  la solución de la siguiente ecuación $y'+y ^{2}+\dfrac{y}{x}=\dfrac{1}{x ^2}$ con solución particular $y_p=\dfrac{-1}{x}$
+\begin{itemize}
+\item Paso 1:hacemos un cambio gracias a euler que consiste en $y=\dfrac{1}{z}+y_p$ para convertirla en una edl.Ademas sacamos su derivada.
+\begin{equation}\tag{1}
+y=\dfrac{1}{z}-\dfrac{1}{x}
+\end{equation}
+
+\begin{equation}\tag{2}
+y'=-\dfrac{1}{z ^2}z'+\dfrac{1}{x ^2}
+\end{equation}
+\,\\
+
+\item Paso 2:sustituimos (1) y (2) en nuestra ecuación original y la simplificamos lo máximo posible
+\begin{equation*}
+-\dfrac{1}{z ^2}z'+\dfrac{1}{x ^2}+(\dfrac{1}{z}-\dfrac{1}{x}) ^{2}+\dfrac{\dfrac{1}{z}-\dfrac{1}{x}}{x}=\dfrac{1}{x ^2} \Rightarrow -\dfrac{1}{z ^2}z'+\dfrac{1}{x ^2}+(\dfrac{1}{z ^2}+\dfrac{1}{x ^2}-2\dfrac{1}{z}\dfrac{1}{x})+\dfrac{1}{zx}-\dfrac{1}{x ^2}=\dfrac{1}{x ^2}
+\end{equation*}
+
+\begin{equation*}
+-\dfrac{1}{z ^2}z'+\dfrac{1}{z ^2}-\dfrac{2}{zx}+\dfrac{1}{zx}=0 \Rightarrow -\dfrac{1}{z ^2}z'+\dfrac{1}{z ^2} -\dfrac{1}{zx}=0\Rightarrow z'-1+\dfrac{z}{x}=0\Rightarrow z'+\dfrac{1}{x}z=1 \rightarrow edl
+\end{equation*}
+
+\,\\
+\item Paso 3:Aplicamos el método del factor integrante  a $z'+\dfrac{1}{x}z=1$,donde $P(x)=\dfrac{1}{x}$ y $Q(x)=1$ ,la desarrollamos y encontramos las soluciones
+\begin{equation*}
+z(x)=Ce^{-\int P(x)dx}+(\int Q(x)e^{\int P(x)dx}dx)e^{-\int P(x)dx}
+\end{equation*}
+
+\begin{equation}\tag {solución homogenea $ (z_h)$}
+z_h=Ce^{-\int P(x)dx}=Ce^{-\int(\dfrac{1}{x})dx}=Ce^{-Ln(x)}=Cx^{-1}=\dfrac{C}{x}
+\end{equation}
+
+\begin{equation}\tag {solución particular $ (z_p)$}
+z_p=(\int Q(x)e^{\int P(x)dx}dx)e^{-\int P(x)dx}=(\int1xdx)\dfrac{1}{x}=\dfrac{x^2}{2}\dfrac{1}{x}=\dfrac{x}{2}
+\end{equation}
+
+\begin{equation}\tag {solución homogenea $ (z_h)$}
+z=z_h+z_p=\dfrac{C}{x}+\dfrac{x}{2}
+\end{equation}
+
+
+\,\\
+\item Paso 4:Una vez encontrado z lo reemplazamos en $y=\dfrac{1}{z}-\dfrac{1}{x}$
+\begin{equation*}
+y=\dfrac{1}{\dfrac{C}{x}+\dfrac{x}{2}}-\dfrac{1}{x}\Rightarrow \dfrac{1}{\dfrac{2C+x^2}{2x}}-\dfrac{1}{x}\Rightarrow \dfrac{x}{\dfrac{x^2}{2}+ C}-\dfrac{1}{x}
+\end{equation*}
+
+\end{itemize}
+\,\\
+\subsection{Factor integrante}
+Encontrar  la solución de la siguiente ecuación $\dfrac{dy}{dx}+2xy=x ^3$ 
+\begin{itemize}
+\item Paso 1:Como ya esta ordenada en forma de una edl, procedemos a sacar el factor integrante con $P(x)=2x$.
+\begin{equation*}
+e ^{\int P(x)dx}=e ^{\int 2xdx}=e^{x^2}
+\end{equation*}
+\,\\
+
+\item Paso 2:Multiplicamos nuestra ecuación por el factor integrante y aplicamos la derivada de un producto:
+\begin{equation*}
+e^{x^2}\dfrac{dy}{dx}+e^{x^2}2xy=e^{x^2}x^3\Rightarrow \dfrac{d(e^{x^2}y)}{dx}=e^{x^2}x^3
+\end{equation*}
+\,\\
+
+\item Paso 3:Integramos a ambos lados
+\begin{equation*}
+\int \dfrac{d(e^{x^2}y)}{dx}=\int e^{x^2}x^3 \Rightarrow e^{x^2}y=\dfrac{1}{2}e^{x^2}(x^{2}-1)+C
+\end{equation*}
+\,\\
+
+\item Paso 4:Despejamos $y$
+\begin{equation*}
+y=\dfrac{\dfrac{1}{2}e^{x^2}(x^{2}-1)+C}{e^{x^2}}\Rightarrow y=\dfrac{1}{2}(x^{2}-1)+Ce^{-x^2}\Rightarrow y=Ce^{-x^2}+\dfrac{x^2}{2}-\dfrac{1}{2}
+\end{equation*}
+\end{itemize}
+\,\\
+\subsection{Transformaciones lineales}
+En esta ocasión vamos a repetir el mismo ejemplo del tema\\resolver esta ecuación diferencial $ \ddot{y}-3\dot{y}+2y=0$\\
+
+Primero la pasamos a su representación de transformación lineal
+\begin{equation*}
+D(D(y))-3D(y)+2I(y)=0(y)
+\end{equation*}\\
+Por notación de la matriz asociada nos queda
+\begin{equation*}
+D^{2}y-3Dy+2Iy=0y\Rightarrow (D^{2}-3D+2I)y=0y
+\end{equation*}\\
+En términos de polinomio matricial ,Además sustituyendo la identidad por uno y el operador derivada por landa nos queda de la siguiente forma :
+\begin{equation*}
+D^{2}-3D+2I=0\\
+\end{equation*}
+\begin{equation}\tag{$\lambda _1=1\,$ y $\lambda _2=2$}
+\lambda ^{2}-3\lambda +2 =0
+\end{equation}\\
+
+Entonces la ecuación $ \ddot{y}-3\dot{y}+2y=0$ la satisfacen:
+\begin{equation*}
+y=K_1e^{x} \textbf{ ó=+ } y=K_2e^{2x}\Rightarrow y=K_1e^{x}+K_2e^{2x}
+\end{equation*}
+
+\,\\
+\subsection{Ecuaciones diferenciales de Clairaut}
+Encontrar  la solución general y singular de la siguiente ecuación $y=x(\dfrac{dy}{dx})+2(\dfrac{dy}{dx})^2$ 
+\begin{itemize}
+
+\item Paso 1:Empezamos con la sustitución de $P=\dfrac{dy}{dx}\Rightarrow y=xp+f(p)$en la ecuación diferencial de Clairaut y sacamos su derivada
+\begin{equation*}
+y(x)=x\dfrac{dy}{dx}+f(\dfrac{dy}{x}\Leftrightarrow y= xp+f(p) 
+\end{equation*}
+
+\begin{equation*}
+ \dfrac{dy}{dx}=x\dfrac{dp}{dx}+p+f'(p)\dfrac{dp}{dx}\Rightarrow p=xp'+p+f'(p)p'\Rightarrow 0=xp'+f'(p)p'\Rightarrow p'(x+f'(x))=0
+\end{equation*}
+\\
+Entonces de los anteriores procesos sabemos que:
+\begin{equation}\tag{1}
+p'=0 \Rightarrow p=C 
+\end{equation}
+
+\begin{equation}\tag{2}
+x+f'(xp)=0  
+\end{equation}
+
+\,\\
+\item Paso 2:Sacamos la solución general y la aplicamos a nuestro ejercicio
+\begin{equation*}
+y=xp+f(p)\Rightarrow y=xC+f(c)\Rightarrow y=Xc+2(C) ^2
+\end{equation*}
+
+\begin{equation}\tag{solución general}
+y=2C^2+xC
+\end{equation}
+
+\,\\
+\item Paso 3:Sacamos la solución singular y la aplicamos a nuestro ejercicio\\
+aplicamos $p=\dfrac{dy}{dx}$ a nuestro ejercicio y sacamos su derivada
+\begin{equation*}
+y=xp+2p ^2
+\end{equation*}
+\begin{equation}\tag{a}
+\dfrac{dy}{dx}=xp'+p+4pp'
+\end{equation}
+reemplazamos (a) en $p=\dfrac{dy}{dx}$ 
+\begin{equation*}
+p=xp'+p+4pp'\Rightarrow xp'+4pp'=0\Rightarrow p'(x+4p)=0
+\end{equation*}
+Entonces $x+4p=0\Rightarrow p=-\dfrac{x}{4}$ y esta aplicada en $y=xp+2p ^2$ nos queda
+
+\begin{equation*}
+y=x(-\dfrac{x}{4})+2(-\dfrac{x}{4})^2\Rightarrow \dfrac{-x^2}{4}+2(\dfrac{x^2}{16}) \longleftrightarrow -\dfrac{x^2}{4}+\dfrac{1}{8}x^2
+\end{equation*}
+\begin{equation}\tag{solución singular}
+y=-\dfrac{1}{8}x^2=-\dfrac{x^2}{8}
+\end{equation}
+
+\end{itemize}
+
+\section{Bibliografía}
+\,\\
+\,guzman, L. M. (s.f.). Ecuaciones diferenciales. \\\,\\
+\,Academic, ©. ( 2000). Academic. Obtenido de https://es-academic.com/dic.nsf/eswiki/400214 \\\,\\
+\,Arteaga, A. J. (20 de abril de 2021). youtube. Obtenido de https://www.youtube.com/watch?v=D7pPQVcQeVM\,\\\,\\
+\,Juliana. (18 de enero de 2017). youtube. Obtenido de https://www.youtube.com/watch?v=J1xc23Xe-ys\,\\\,\\
+\,Carito, M. c. (14 de septiembre de 2020). youtube. Obtenido de https://www.youtube.com/watch?v=le$_X9MWF_hE$\,\\\,\\
+\,Mejía, A. D. (26 de junio de 2019). youtube. Obtenido de https://www.youtube.com/watch?v=E8-CGVvPmJI
+\end{document}
